@@ -49,9 +49,9 @@ $(function () {
     $('#add').on('click', function () {
         event.preventDefault();
         var $table = $('#dataTable');
-        var $tr = $('#sec01').find('tr').first();
+        var $tr = $('#sec01').find('$row').first();
         //$table.find("tbody").append($tr);
-        $table.row.add($tr);
+        $table.row.append($tr);
     });
 });
 
