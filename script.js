@@ -18,9 +18,9 @@ It should set a handler for the form's submit button.*/
 $(function() {
 
 	$('#addNew').on('click', function() {
+        event.preventDefault();
 		$('#sec02').fadeToggle(100);
 	})
-
 });
 
 /* This function creates a table row (tr) for each object in the array, with a cell (td) 
@@ -47,13 +47,12 @@ recreate the table with the updated database and show that table, hiding the for
 $(function () {
 
     $('#add').on('click', function () {
+        event.preventDefault();
         var $table = $('#dataTable');
         var $tr = $('#sec01').find('tr').first();
         //$table.find("tbody").append($tr);
-        dt.row.add($tr);
-        dt.draw();
+        $table.row.add($tr);
     });
-
 });
 
 
