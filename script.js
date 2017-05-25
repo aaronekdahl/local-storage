@@ -1,58 +1,65 @@
     var planets = [
-    	{name: 'mercury', distance: 36},
-    	{name: 'venus', distance: 67.2},
-    	{name: 'earth', distance: 93},
-    	{name: 'mars', distance: 141.6},
-    	{name: 'jupiter', distance: 483.6},
-    	{name: 'saturn', distance: 886.7},
-    	{name: 'uranus', distance: 1784.0},
-    	{name: 'neptune', distance: 2794.4}
+    	{name: 'Mercury', distance: 36},
+    	{name: 'Venus', distance: 67.2},
+    	{name: 'Earth', distance: 93},
+    	{name: 'Mars', distance: 141.6},
+    	{name: 'Jupiter', distance: 483.6},
+    	{name: 'Saturn', distance: 886.7},
+    	{name: 'Uranus', distance: 1784.0},
+    	{name: 'Neptune', distance: 2794.4}
     	];
 
     displayPlanets();
 
-    $('#addNew').on('click', addNewPlanet);
+    $('#submit').on('click', addNewPlanet);
 
-    /*This handler is for the new-item button. It should hide the table and show the form. 
-    It should set a handler for the form's submit button.*/
-
-
-
-    /* This function creates a table row (tr) for each object in the array, with a cell (td) 
-    for each property to be displayed. Append each of these rows to the table body.*/
+//------
 
     function displayPlanets() {
+        var i, len, planet;
+        var tr, td;
 
-    var tableBody = $('#makeTable');
-    for (var i = 0; i < planets.length; i++) {
-    	var celestialBody = planets[i];
-    	var $row = $('<tr></tr>');
-    	row.append($('<td></td>').text(planets[i].name));
-    	row.append($('<td></td>').text(planets[i].distance));
-    	tableBody.append($row);
+    $('#planets').empty();
+
+    for (i = 0, len = planets.length; i < len; ++i) {
+        planet = planets[i];
+
+        tr = $('<tr>');
+
+        td = $('<td>');
+        td.text(planet.name);
+        tr.append(td);
+
+        td = $('<td>');
+        td.text(planet.distance);
+        tr.append(td);
+
+        $('#planets').append(tr);
     }
-    };
 
+    $('#sec01').show();
+    $('#sec02').hide();
 
-    /* This handler is for the submit button that creates an object using the form data and 
-    adds that object to the array. Then it should call the first function you wrote to 
-    recreate the table with the updated database and show that table, hiding the form.*/
+    }
+
+//-------
 
     function addNewPlanet() {
+
         $('#name').val('');
         $('#distance').val('');
 
         $('#submit').one('click', addPlanet);
         $('#reset').one('click', displayPlanets);
 
-        $('#addNew').on('click', function() {
-            event.preventDefault();
-            $('#sec02').fadeToggle(100);
-        })
+        $('#sec01').hide();
+        $('#sec02').show();
+
     };
 
-
+//-------
     function addPlanet() {
+
         var newPlanet = {
             name: $('#name').val(),
             age: $('#distance').val()
