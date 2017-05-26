@@ -13,7 +13,7 @@
 
     $('#submit').on('click', addNewPlanet);
 
-//------
+//------ Assignment 5: Object List, in-work.
 
     function displayPlanets() {
         var i, len, planet;
@@ -37,12 +37,12 @@
         $('#planets').append(tr);
     }
 
-    $('#sec01').show();
-    $('#sec02').hide();
+        $('#sec01').show();
+        //$('#sec02').hide();
 
     }
 
-//-------
+//------ Assignment 5: Object List, in-work.
 
     function addNewPlanet() {
 
@@ -57,12 +57,13 @@
 
     };
 
-//-------
+//------ Assignment 5: Object List, in-work.
+
     function addPlanet() {
 
         var newPlanet = {
-            name: $('#name').val(),
-            age: $('#distance').val()
+            name: $('#name').val(''),
+            age: $('#distance').val('')
         };
 
         planets.push(newPlanet);
@@ -72,7 +73,11 @@
         displayPlanets();
     }
 
+//------ Assignment 6: Local Storage, in-work.
 
+//work with this: 
+//localStorage[ 'AKEY' ] = JSON.stringify( data );
+//var data = JSON.parse( localStorage[ 'AKEY' ] );
 
 
 
