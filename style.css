@@ -7,13 +7,13 @@ body {
 	padding-bottom: 16px;
 }
 
-#sec01 {
+#sec-table {
 	padding-bottom: 16px;
 }
 
-/*#sec02 {
+#sec-form {
 	display: none;
-}*/
+}
 
 th, td {
   text-align: center;

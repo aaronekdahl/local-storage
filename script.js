@@ -11,7 +11,7 @@
 
     displayPlanets();
 
-    $('#submit').on('click', addNewPlanet);
+    $('#addNew').on('click', addNewPlanet);
 
 //------ Assignment 5: Object List, in-work.
 
@@ -37,8 +37,8 @@
         $('#planets').append(tr);
     }
 
-        $('#sec01').show();
-        //$('#sec02').hide();
+        $('#sec-table').show();
+        $('#sec-form').hide();
 
     }
 
@@ -52,8 +52,8 @@
         $('#submit').one('click', addPlanet);
         $('#reset').one('click', displayPlanets);
 
-        $('#sec01').hide();
-        $('#sec02').show();
+        $('#sec-table').hide();
+        $('#sec-form').show();
 
     };
 
@@ -63,7 +63,7 @@
 
         var newPlanet = {
             name: $('#name').val(''),
-            age: $('#distance').val('')
+            distance: $('#distance').val('')
         };
 
         planets.push(newPlanet);
